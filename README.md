@@ -88,7 +88,7 @@ The following command can be used to obtain help information for subcommands. Fo
 
 gnfd-cmd [command-name][subcommand-name] -h -->
 
-### Documentation and Resources that was used in this project.
+### Documentation, Resources and Sources that was used in this project.
 
 [Greenfield - gRPC Gateway docs](https://greenfield.bnbchain.org/openapi)
 
@@ -97,6 +97,8 @@ gnfd-cmd [command-name][subcommand-name] -h -->
 [gRPC, REST, and CometBFT Endpoints](https://docs.cosmos.network/main/core/grpc_rest#grpc-server)
 
 [Blockchain GRPC REST](https://greenfield.bnbchain.org/docs/api-sdk/grpc-rest.html)
+
+[Cosmos-client](https://github.com/SylvestreG/cosmos-client/tree/master)
 
 ### Related Projects
 [greenfield-cmd](https://github.com/bnb-chain/greenfield-common): Greenfield client cmd tool, supporting commands to make requests to greenfield written in Golang.
@@ -111,17 +113,8 @@ gnfd-cmd [command-name][subcommand-name] -h -->
 
 [Greenfield-Common](https://github.com/bnb-chain/greenfield-common): The Greenfield common package. Support common libs for different repos of greenfield.
 
-### License
 #### MIT License
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-Copyright (c) 2023
+SOFTWARE. Copyright (c) 2023
