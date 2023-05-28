@@ -8,8 +8,23 @@ Rust implemintation of the Greenfield client cmd tool, supporting CLI commands t
 
 ### Quick Start Examples
 Config Examples
+basic config
+The command should run with "-c filePath" to load the config file and the config should be TOML format. The default config file is "config.toml".
 
-Note: Requires Go 1.20+ and Rust 1.63+
+Below is an example of the config file. The rpcAddr and chainId should be consistent with the Greenfield network. For Greenfield Testnet, you can refer to Greenfield Testnet RPC Endpoints.
+```
+gnfd-testnet-fullnode-cosmos-us.bnbchain.org:443
+gnfd-testnet-fullnode-cosmos-us.nodereal.io:9090
+```
+The rpcAddr indicates the Tendermint RPC address with the port info. The configuration for passwordFile is the path to the file containing the password required to generate or parse the keystore. Users need to set the password on passwordFile before running commands and the password can be any random string.
+
+Note: Requires Rust 1.68+
+
+```
+rpcAddr = "gnfd-testnet-fullnode-cosmos-us.bnbchain.org:443"
+chainId = "greenfield_5600-1"
+passwordFile = "password.txt"
+```
 
 
 Run Examples
