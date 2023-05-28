@@ -23,7 +23,7 @@ Reference
 
 [Greenfield-Go-SDK](https://github.com/bnb-chain/greenfield-go-sdk): The Greenfield SDK, interact with SP, Greenfield and Tendermint.
 
-[Greenfield-Common](Support common libs for different repos of greenfield): The Greenfield common package.
+[Greenfield-Common](https://github.com/bnb-chain/greenfield-common): The Greenfield common package. Support common libs for different repos of greenfield.
 
 License
 MIT
