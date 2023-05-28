@@ -37,9 +37,9 @@ pub fn init() -> Command{
                     # Create a new bucket called gnfd-bucket, visibility is public-read
                     $ gnfd-cmd bucket create --visibility=public-read  gnfd://gnfd-bucket")
                     .args([
-                        arg!(bucket_url: <BUCKET_URL> "URL of the new bucket").required(true)
+                        arg!(bucket_url: <"BUCKET-URL"> "URL of the new bucket").required(true)
                             .value_parser(value_parser!(String)),
-                        arg!(--primarySP [STORAGE_ADDR] "indicate the primarySP address, using the string type")
+                        arg!(--primarySP [PRIMARY_SP] "indicate the primarySP address, using the string type")
                             .value_parser(value_parser!(String)).required(false).require_equals(true)
                             .default_value(""),
                         arg!(--paymentAddress [PAYMENT_ADDR] "indicate the PaymentAddress info, using the string type")

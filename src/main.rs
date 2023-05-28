@@ -22,7 +22,7 @@ fn main() {
 
                     // create client!!! Kraken
 
-                    let _primary_sp_addr:String = match sub_matches.get_one::<String>("primary_sp") {
+                    let _primary_sp_addr:String = match sub_matches.get_one::<String>("primarySP") {
                         Some(addr) => addr.clone(),
                         None => {
                             "some_address_from_client".to_string()
