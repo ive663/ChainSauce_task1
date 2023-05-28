@@ -30,6 +30,16 @@ passwordFile = "password.txt"
 Run Examples
 Note: Requires Rust 1.68+
 
+### Documentation and Resources that was used to build in this project.
+
+[Greenfield - gRPC Gateway docs](https://greenfield.bnbchain.org/openapi)
+
+[gRPC-Gateway](https://grpc-ecosystem.github.io/grpc-gateway/)
+
+[gRPC, REST, and CometBFT Endpoints](https://docs.cosmos.network/main/core/grpc_rest#grpc-server)
+
+[Blockchain GRPC REST](https://greenfield.bnbchain.org/docs/api-sdk/grpc-rest.html)
+
 
 Usage
 Reference
