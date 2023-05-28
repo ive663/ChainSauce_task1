@@ -102,8 +102,9 @@ fn main() {
                         println!("flag address is none.");
                     }
                     else{
-                        // let def_addr = "0x0000".to_string();
-                        // let address = address.unwrap_or(&def_addr);
+                        let def_addr = "0x0000".to_string();
+                        let address = address.unwrap_or(&def_addr);
+                        // TODO!(balance);
                     }
                 }
 
