@@ -1,23 +1,32 @@
 // use std::fs;
 use pkg::{init, generate_key};
+use crate::client::RpcClient;
 
 pub mod pkg;
+pub mod client;
 
-fn main() {
+#[tokio::main]
+async fn main() {
     let cli = init();
     
     let matches = cli.get_matches();
+    let rpc_client = crate::RpcClient::new("https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org:443").expect("init client");
 
     match matches.subcommand() {
         Some(("bucket", sub_matches)) => {
             let bucket_command = sub_matches.subcommand().unwrap_or(("help", sub_matches));
 
             match bucket_command{
+                ("ls", sub_matches) => {
+                    let response = rpc_client.bucket.list_bucket().await.unwrap();
+                    println!("{response:?}");
+                },
+
                 ("create", sub_matches) => {
 
                     let bucket_url = sub_matches.get_one::<String>("bucket_url");
                     if bucket_url.is_none() {
-                        println!("error!")
+                        println!("error!");
                     }
 
                     // create client!!! Kraken
@@ -29,7 +38,7 @@ fn main() {
                         } 
                     };
 
-                    let _payment_addr:String = match sub_matches.get_one::<String>("paymentAddress") {
+                    let _payment_addr:String = match sub_matches.get_one::<String>("payment_address") {
                         Some(addr) => addr.clone(),
                         None => "".to_string(),
                     };
@@ -39,7 +48,7 @@ fn main() {
                         None => "private".to_string(),
                     };
 
-                    let _charge_quota:u64 = match sub_matches.get_one::<u64>("chargedQuota") {
+                    let _charge_quota:u64 = match sub_matches.get_one::<u64>("charged_quota") {
                         Some(&quota) if quota>0 => {
                             quota.clone()
                         },
@@ -59,10 +68,11 @@ fn main() {
                     println!("something")
                 },
                 ("list", _) => {
-                    println!("something")
+                    // new client
+
                 },
                 (&_, _) => {
-                    println!("something")
+                    println!("Invalid command")
                 },
             }
             
@@ -103,8 +113,15 @@ fn main() {
                     }
                     else{
                         let def_addr = "0x0000".to_string();
-                        let address = address.unwrap_or(&def_addr);
+                        let _address = address.unwrap_or(&def_addr);
                         // TODO!(balance);
+                        let client =
+                        RpcClient::new("https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org:443").unwrap();
+
+                        let balances = client.bucket.list_bucket().await.unwrap();
+
+                        println!("{:#?}", balances);
+
                     }
                 }
 
