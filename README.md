@@ -1,6 +1,6 @@
 # ChainSauce_task1
 
-Greenfield client cmd tool, supporting commands to make requests to greenfield
+Rust implemintation of the Greenfield client cmd tool, supporting CLI commands to make requests to Greenfield Blockchain.
 
 ### Disclaimer
 The software and related documentation are under active development, all subject to potential future change without notification and not ready for production use. The code and security audit have not been fully completed and not ready for any bug bounty. We advise you to be careful and experiment on the network at your own risk. Stay safe out there.
@@ -13,13 +13,15 @@ Usage
 Reference
 
 ### Related Projects
-[CosmosRust](https://github.com/cosmos/cosmos-rust)
+[greenfield-cmd](https://github.com/bnb-chain/greenfield-common): Greenfield client cmd tool, supporting commands to make requests to greenfield written in Golang.
 
 [Greenfield](https://github.com/bnb-chain/greenfield): The Golang implementation of the Greenfield Blockchain.
-Greenfield-Go-SDK: The Greenfield SDK, interact with SP, Greenfield and Tendermint.
-Greenfield-Common: The Greenfield common package.
-Reed-Solomon: The Reed-Solomon Erasure package in prue Go, with speeds exceeding 1GB/s/cpu core.
-Juno: The Cosmos Hub blockchain data aggregator and exporter package.
+[Cosmos SDK](https://github.com/cosmos/cosmos-sdk): A Framework for Building High Value Public Blockchains.
+[CosmosRust](https://github.com/cosmos/cosmos-rust): A Rust implemintation the Cosmos SDK.
+[Greenfield-Go-SDK](https://github.com/bnb-chain/greenfield-go-sdk): The Greenfield SDK, interact with SP, Greenfield and Tendermint.
+[Greenfield-Common](Support common libs for different repos of greenfield): The Greenfield common package.
+
+
 
 License
 MIT
