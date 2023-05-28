@@ -11,14 +11,14 @@ Config Examples
 basic config
 The command should run with "-c filePath" to load the config file and the config should be TOML format. The default config file is "config.toml".
 
-Below is an example of the config file. The rpcAddr and chainId should be consistent with the Greenfield network. For Greenfield Testnet, you can refer to Greenfield Testnet RPC Endpoints.
+Below is an example of the config file. The rpcAddr and chainId should be consistent with the Greenfield network. For Greenfield Testnet, you can refer to Greenfield [Testnet RPC Endpoints](https://greenfield.bnbchain.org/docs/guide/resources.html#bridge).
 ```
 gnfd-testnet-fullnode-cosmos-us.bnbchain.org:443
 gnfd-testnet-fullnode-cosmos-us.nodereal.io:9090
 ```
 The rpcAddr indicates the Tendermint RPC address with the port info. The configuration for passwordFile is the path to the file containing the password required to generate or parse the keystore. Users need to set the password on passwordFile before running commands and the password can be any random string.
 
-Note: Requires Rust 1.68+
+
 
 ```
 rpcAddr = "gnfd-testnet-fullnode-cosmos-us.bnbchain.org:443"
@@ -28,6 +28,9 @@ passwordFile = "password.txt"
 
 
 Run Examples
+Note: Requires Rust 1.68+
+
+
 Usage
 Reference
 
