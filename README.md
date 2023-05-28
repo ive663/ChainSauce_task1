@@ -13,7 +13,7 @@ Usage
 Reference
 
 ### Related Projects
-[https://github.com/cosmos/cosmos-rust](Cosmos Rust)
+[CosmosRust](https://github.com/cosmos/cosmos-rust)
 Greenfield: The Golang implementation of the Greenfield Blockchain.
 Greenfield-Go-SDK: The Greenfield SDK, interact with SP, Greenfield and Tendermint.
 Greenfield-Common: The Greenfield common package.
