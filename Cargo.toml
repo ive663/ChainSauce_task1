@@ -1,8 +1,18 @@
 [package]
 name = "ChainSauce_task1"
+# name = "gnfd-cmd"
 version = "0.1.0"
 edition = "2021"
+# authors = ["Almas Serik", "Alibek Sarseitov", "Artyom Amayev", "Nursultan Ergaliev"]
+description = "cmd tool for supporting making request to greenfield"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+clap = "4.3.0"
+cosmrs = "0.13"
+cosmos-sdk-proto = "0.19.0"
+tonic = "0.9.2"
+futures = "0.3.28"
+tokio = { version = "1.28.1", features = ["full"] }
+reqwest = {version = "0.11.11", features = ["native-tls-alpn"]}
