@@ -1,10 +1,4 @@
-// use cosmos_sdk_proto::cosmos::
-
-// use cosmos_sdk_proto::tendermint::abci::
-
 use greenfield_sdk_proto::greenfield::storage::QueryListBucketsResponse;
-
-// use cosmos_sdk_proto::cosmos::base::query::v1beta1::PageRequest;
 use prost::Message;
 use std::rc::Rc;
 use tendermint_rpc::{Client, HttpClient};
@@ -33,6 +27,4 @@ impl BucketModule {
         let resp = QueryListBucketsResponse::decode(query.value.as_slice())?;
         Ok(resp)
     }
-
-    // /greenfield.sp.Query/StorageProviders
 }

@@ -47,11 +47,9 @@ async fn main() {
                     if bucket_url.is_none() {
                         println!("error!");
                     }
+            
 
-                    // create client!!! Kraken
-
-                    let _primary_sp_addr: String = match sub_matches.get_one::<String>("primarySP")
-                    {
+                    let _primary_sp_addr:String = match sub_matches.get_one::<String>("primary_sp") {
                         Some(addr) => addr.clone(),
                         None => "some_address_from_client".to_string(),
                     };
@@ -77,17 +75,21 @@ async fn main() {
                     // send request
 
                     println!("Bucket was created... kidding :) work in progress.")
-                }
+                },
                 ("update", _) => {
                     println!("something")
-                }
                 ("head", _) => {
                     println!("something")
-                }
+                },
+                ("list", _) => {
+                    // new client
+
+                },
                 (&_, _) => {
-                    println!("something")
-                }
+                    println!("Invalid command")
+                },
             }
+            
         }
 
         Some(("bank", sub_matches)) => {
