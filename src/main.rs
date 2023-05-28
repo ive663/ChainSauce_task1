@@ -1,7 +1,8 @@
 // use std::fs;
 #[allow(dead_code)]
 use crate::client::RpcClient;
-use pkg::{generate_key, init};
+use pkg::{generate_key};
+use ChainSauce_task1::init;
 
 pub mod client;
 pub mod pkg;
@@ -15,7 +16,7 @@ struct BucketResponse {
 
 #[tokio::main]
 async fn main() {
-    let cli = init();
+    let cli = crate::init();
 
     let matches = cli.get_matches();
     let rpc_client =
@@ -75,15 +76,6 @@ async fn main() {
                     // send request
 
                     println!("Bucket was created... kidding :) work in progress.")
-                },
-                ("update", _) => {
-                    println!("something")
-                ("head", _) => {
-                    println!("something")
-                },
-                ("list", _) => {
-                    // new client
-
                 },
                 (&_, _) => {
                     println!("Invalid command")

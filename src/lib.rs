@@ -1,5 +1,5 @@
 // use bucket::new_bucket;
-pub use clap::{Command,arg, value_parser};
+pub use clap::{Command, command, arg, value_parser};
 
 pub mod bucket;
 pub mod object;
