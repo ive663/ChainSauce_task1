@@ -45,6 +45,7 @@ Assuming that the current private key hex string is written as plaintext in the 
 ./ChainSauce_task1 create-keystore --privKeyFile key.txt key.json
 ```
 After the keystore file has been generated, you can delete the private key file which contains the plaintext of private key.
+
 ---
 ### Supported CMD's
 ```
@@ -120,6 +121,11 @@ gnfd-cmd [command-name][subcommand-name] -h -->
 
 [Cosmos-client](https://github.com/SylvestreG/cosmos-client/tree/master)
 
+[GRPC Greenfield Cosmos Client](https://github.com/KRakenoZavr/Count/tree/grpc)
+
+[Greenfield Rust SDK](https://github.com/KRakenoZavr/greenfield-sdk-rust-v2)
+
+---
 ### Related Projects
 [greenfield-cmd](https://github.com/bnb-chain/greenfield-common): Greenfield client cmd tool, supporting commands to make requests to greenfield written in Golang.
 
@@ -133,6 +139,8 @@ gnfd-cmd [command-name][subcommand-name] -h -->
 
 [Greenfield-Common](https://github.com/bnb-chain/greenfield-common): The Greenfield common package. Support common libs for different repos of greenfield.
 
+
+---
 #### MIT License
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
