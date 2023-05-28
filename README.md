@@ -14,7 +14,8 @@ Reference
 
 ### Related Projects
 [CosmosRust](https://github.com/cosmos/cosmos-rust)
-Greenfield: The Golang implementation of the Greenfield Blockchain.
+
+[Greenfield](https://github.com/bnb-chain/greenfield): The Golang implementation of the Greenfield Blockchain.
 Greenfield-Go-SDK: The Greenfield SDK, interact with SP, Greenfield and Tendermint.
 Greenfield-Common: The Greenfield common package.
 Reed-Solomon: The Reed-Solomon Erasure package in prue Go, with speeds exceeding 1GB/s/cpu core.
