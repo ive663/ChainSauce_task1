@@ -22,14 +22,14 @@ fn main() {
 
                     // create client!!! Kraken
 
-                    let _primary_sp_addr:String = match sub_matches.get_one::<String>("primarySP") {
+                    let _primary_sp_addr:String = match sub_matches.get_one::<String>("primary_sp") {
                         Some(addr) => addr.clone(),
                         None => {
                             "some_address_from_client".to_string()
                         } 
                     };
 
-                    let _payment_addr:String = match sub_matches.get_one::<String>("paymentAddress") {
+                    let _payment_addr:String = match sub_matches.get_one::<String>("payment_address") {
                         Some(addr) => addr.clone(),
                         None => "".to_string(),
                     };
@@ -39,7 +39,7 @@ fn main() {
                         None => "private".to_string(),
                     };
 
-                    let _charge_quota:u64 = match sub_matches.get_one::<u64>("chargedQuota") {
+                    let _charge_quota:u64 = match sub_matches.get_one::<u64>("charged_quota") {
                         Some(&quota) if quota>0 => {
                             quota.clone()
                         },
@@ -59,10 +59,11 @@ fn main() {
                     println!("something")
                 },
                 ("list", _) => {
-                    println!("something")
+                    // new client
+
                 },
                 (&_, _) => {
-                    println!("something")
+                    println!("Invalid command")
                 },
             }
             
@@ -103,7 +104,7 @@ fn main() {
                     }
                     else{
                         let def_addr = "0x0000".to_string();
-                        let address = address.unwrap_or(&def_addr);
+                        let _address = address.unwrap_or(&def_addr);
                         // TODO!(balance);
                     }
                 }
