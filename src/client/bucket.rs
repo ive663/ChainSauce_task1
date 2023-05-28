@@ -4,7 +4,7 @@
 
 use greenfield_sdk_proto::greenfield::storage::QueryListBucketsResponse;
 
-use cosmos_sdk_proto::cosmos::base::query::v1beta1::PageRequest;
+// use cosmos_sdk_proto::cosmos::base::query::v1beta1::PageRequest;
 use prost::Message;
 use std::rc::Rc;
 use tendermint_rpc::{Client, HttpClient};

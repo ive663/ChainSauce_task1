@@ -1,6 +1,7 @@
 use std::rc::Rc;
 use tendermint_rpc::HttpClient;
 
+#[allow(dead_code)]
 pub struct TxModule {
     rpc: Rc<HttpClient>,
 }
