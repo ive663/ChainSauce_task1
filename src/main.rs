@@ -17,7 +17,7 @@ async fn main() {
             let bucket_command = sub_matches.subcommand().unwrap_or(("help", sub_matches));
 
             match bucket_command{
-                ("ls", sub_matches) => {
+                ("ls", _sub_matches) => {
                     let response = rpc_client.bucket.list_bucket().await.unwrap();
                     println!("{response:?}");
                 },
@@ -28,8 +28,7 @@ async fn main() {
                     if bucket_url.is_none() {
                         println!("error!");
                     }
-
-                    // create client!!! Kraken
+                    // rpc_client.
 
                     let _primary_sp_addr:String = match sub_matches.get_one::<String>("primary_sp") {
                         Some(addr) => addr.clone(),
@@ -60,16 +59,6 @@ async fn main() {
                     // send request
 
                     println!("Bucket was created... kidding :) work in progress.")
-                },
-                ("update", _) => {
-                    println!("something")
-                },
-                ("head", _) => {
-                    println!("something")
-                },
-                ("list", _) => {
-                    // new client
-
                 },
                 (&_, _) => {
                     println!("Invalid command")
