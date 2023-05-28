@@ -45,8 +45,8 @@ Assuming that the current private key hex string is written as plaintext in the 
 ./ChainSauce_task1 create-keystore --privKeyFile key.txt key.json
 ```
 After the keystore file has been generated, you can delete the private key file which contains the plaintext of private key.
-
-### Supported Features
+---
+### Supported CMD's
 ```
 help:
 ./ChainSauce_task1 -h
@@ -63,7 +63,27 @@ generate keystore key.json:
 #list bucket info:
 ./ChainSauce_task1 bucket ls
 ```
+---
 ### in active development
+### Modules
+
+| Greenfield Module | Dev Status |
+| ------------- | ------------- | 
+| Auth | ✅ |
+| Authz | 🚫 |
+| Bank | ✅ 🔨|
+| Tendermint | 🔨 |
+| bucket | ✅ 🔨|
+| object |🔨|          
+| group  |🔨|         
+| crosschain |🔨|     
+| bank |🔨|  
+| policy |🔨|          
+| payment |🔨|
+| sp |🔨|
+| create-keystore |🔨| 
+| help, h | ✅ |   
+---
 
 
 Get help TODO
