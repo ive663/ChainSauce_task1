@@ -53,6 +53,7 @@ pub fn init() -> Command{
                     ])
             )
             .subcommand(
+<<<<<<< HEAD
                 Command::new("update")
                 .about("update bucket meta on chain")
                 .long_about("Update the visibility, payment account or read quota meta of the bucket.
@@ -102,6 +103,13 @@ pub fn init() -> Command{
 
                 Examples:
                 $ gnfd-cmd bucket ls")
+=======
+                Command::new("ls")
+                    .about("list buckets")
+                    .long_about("List the bucket names and bucket ids of the user.
+                    Examples:
+                    $ gnfd-cmd bucket ls")
+>>>>>>> c5ec25baaeae393efd4662e42c9cbd9d992e646b
             )
     )
     .subcommand(

@@ -1,23 +1,32 @@
 // use std::fs;
 use pkg::{init, generate_key};
+use crate::client::RpcClient;
 
 pub mod pkg;
+pub mod client;
 
-fn main() {
+#[tokio::main]
+async fn main() {
     let cli = init();
     
     let matches = cli.get_matches();
+    let rpc_client = crate::RpcClient::new("https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org:443").expect("init client");
 
     match matches.subcommand() {
         Some(("bucket", sub_matches)) => {
             let bucket_command = sub_matches.subcommand().unwrap_or(("help", sub_matches));
 
             match bucket_command{
+                ("ls", sub_matches) => {
+                    let response = rpc_client.bucket.list_bucket().await.unwrap();
+                    println!("{response:?}");
+                },
+
                 ("create", sub_matches) => {
 
                     let bucket_url = sub_matches.get_one::<String>("bucket_url");
                     if bucket_url.is_none() {
-                        println!("error!")
+                        println!("error!");
                     }
 
                     // create client!!! Kraken
@@ -58,10 +67,13 @@ fn main() {
                 ("head", _) => {
                     println!("something")
                 },
+<<<<<<< HEAD
                 ("list", _) => {
                     // new client
 
                 },
+=======
+>>>>>>> c5ec25baaeae393efd4662e42c9cbd9d992e646b
                 (&_, _) => {
                     println!("Invalid command")
                 },
@@ -106,6 +118,13 @@ fn main() {
                         let def_addr = "0x0000".to_string();
                         let _address = address.unwrap_or(&def_addr);
                         // TODO!(balance);
+                        let client =
+                        RpcClient::new("https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org:443").unwrap();
+
+                        let balances = client.bucket.list_bucket().await.unwrap();
+
+                        println!("{:#?}", balances);
+
                     }
                 }
 
