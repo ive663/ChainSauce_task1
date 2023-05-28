@@ -6,6 +6,44 @@ Rust implemintation of the [Greenfield client cmd tool](https://github.com/bnb-c
 ### Disclaimer
 **The software and related documentation are under active development, all subject to potential future change without notification and not ready for production use. The code and security audit have not been fully completed and not ready for any bug bounty. We advise you to be careful and experiment on the network at your own risk. Stay safe out there.**
 
+### In active development
+### Modules
+
+We took greenfield proto files and Cosmos SDK proto file and generate Greenfield SDK in Rust.  
+
+All modules was uploaded as separate repository [Greenfield Rust SDK](https://github.com/KRakenoZavr/greenfield-sdk-rust-v2) for other developers to use.
+
+
+| Greenfield Module | Dev Status | Note |
+| ------------- | ------------- | -----|
+| Auth | 🔨|
+| Authz | 🔨 |
+| Bank | ✅ 🔨| can check balance |
+| Tendermint | 🔨 |
+| bucket | ✅ 🔨| can get bucket list |
+| object |🔨|          
+| group  |🔨|         
+| crosschain |🔨|     
+| bank |🔨|  
+| policy |🔨|          
+| payment |🔨|
+| sp |🔨|
+| create-keystore |🔨| in active development 65% done | 
+| help, h | ✅ |   
+---
+
+### Supported CMD's (what is working right now)
+```
+#help:
+./ChainSauce_task1 -h
+
+#check balance:
+./ChainSauce_task1 bank balance  
+
+#list bucket info:
+./ChainSauce_task1 bucket ls
+```
+---
 ### installation
 
 Note: Requires Rust 1.68+
@@ -22,7 +60,6 @@ The command should run with "-c filePath" to load the config file and the config
 Below is an example of the config file. The rpcAddr and chainId should be consistent with the Greenfield network. For Greenfield Testnet, you can refer to Greenfield [Testnet RPC Endpoints](https://greenfield.bnbchain.org/docs/guide/resources.html#bridge).
 ```
 gnfd-testnet-fullnode-cosmos-us.bnbchain.org:443
-gnfd-testnet-fullnode-cosmos-us.nodereal.io:9090
 ```
 The rpcAddr indicates the Tendermint RPC address with the port info. The configuration for passwordFile is the path to the file containing the password required to generate or parse the keystore. Users need to set the password on passwordFile before running commands and the password can be any random string.
 
@@ -34,7 +71,7 @@ chainId = "greenfield_5600-1"
 passwordFile = "password.txt"
 ```
 
-### Generate Keystore
+### Generate Keystore (not yet working)
 
 Before generate keystore, you should export your private key from MetaMask and write it into a local file as plaintext . You need also write your password on the password file which set by the "passwordFile" field in the config file.
 
@@ -46,68 +83,9 @@ Assuming that the current private key hex string is written as plaintext in the 
 ```
 After the keystore file has been generated, you can delete the private key file which contains the plaintext of private key.
 
----
-### Supported CMD's
-```
-help:
-./ChainSauce_task1 -h
-
-generate keystore key.json:
-./ChainSauce_task1 create-keystore --privKeyFile key.txt key.json
-
-#check balance:
-./ChainSauce_task1 bank balance  
-
-#list storage providers list:
-./ChainSauce_task1 sp ls
-
-#list bucket info:
-./ChainSauce_task1 bucket ls
-```
----
-### in active development
-### Modules
-
-| Greenfield Module | Dev Status |
-| ------------- | ------------- | 
-| Auth | ✅ |
-| Authz | 🚫 |
-| Bank | ✅ 🔨|
-| Tendermint | 🔨 |
-| bucket | ✅ 🔨|
-| object |🔨|          
-| group  |🔨|         
-| crosschain |🔨|     
-| bank |🔨|  
-| policy |🔨|          
-| payment |🔨|
-| sp |🔨|
-| create-keystore |🔨| 
-| help, h | ✅ |   
----
 
 
-Get help TODO
-<!-- The commands support different categories, including storage,group,bridge,bank,permission and payment
 
-// get help for supporing commands and basic command format
-gnfd-cmd -h
-   bucket           support the bucket operation functions, including create/update/delete/head/list
-   object           support the object operation functions, including put/get/update/delete/head/list and so on
-   group            support the group operation functions, including create/update/delete/head/head-member
-   crosschain       support the cross-chain functions, including transfer and mirror
-   bank             support the bank functions
-   policy           support object policy and bucket policy operation functions
-   payment          support the payment operation functions
-   sp               support the storage provider operation functions
-   create-keystore  create a new keystore file
-
-The following command can be used to obtain help information for commands. For example, you can use "gnfd-cmd object -h" to obtain the subcommand infos under the object command.
-
-gnfd-cmd [command-name] -h
-The following command can be used to obtain help information for subcommands. For example, you can use "gnfd-cmd object update -h" to obtain the help info to update object.
-
-gnfd-cmd [command-name][subcommand-name] -h -->
 
 ### Documentation, Resources and Sources that was used in this project.
 
