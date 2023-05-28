@@ -3,7 +3,7 @@ name = "ChainSauce_task1"
 # name = "gnfd-cmd"
 version = "0.1.0"
 edition = "2021"
-# authors = ["Almas Serik", "Alibek Sarseitov", "Artyom Amayev", "Nursultan Ergaliev"]
+authors = ["Almas Serik", "Alibek Sarseitov", "Artyom Amayev", "Nursultan Ergaliev"]
 description = "cmd tool for supporting making request to greenfield"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
