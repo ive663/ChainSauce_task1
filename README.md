@@ -8,7 +8,10 @@ Rust implemintation of the Greenfield client cmd tool, supporting CLI commands t
 
 ### Quick Start Examples
 Config Examples
-Note: Requires Go 1.20+
+
+Note: Requires Go 1.20+ and Rust 1.63+
+
+
 Run Examples
 Usage
 Reference
