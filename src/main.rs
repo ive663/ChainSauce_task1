@@ -67,13 +67,10 @@ async fn main() {
                 ("head", _) => {
                     println!("something")
                 },
-<<<<<<< HEAD
                 ("list", _) => {
                     // new client
 
                 },
-=======
->>>>>>> c5ec25baaeae393efd4662e42c9cbd9d992e646b
                 (&_, _) => {
                     println!("Invalid command")
                 },
