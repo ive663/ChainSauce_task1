@@ -1,11 +1,11 @@
-use std::fs;
+// use std::fs;
 use pkg::{init, generate_key};
 
 pub mod pkg;
 
 fn main() {
     let cli = init();
-
+    
     let matches = cli.get_matches();
 
     match matches.subcommand() {
@@ -14,19 +14,56 @@ fn main() {
 
             match bucket_command{
                 ("create", sub_matches) => {
-                    let primary_sp =  sub_matches.get_one::<String>("primarySPFlag");
-                    if primary_sp.is_none(){
-                        println!("flag primarySP is none.")
+
+                    let bucket_url = sub_matches.get_one::<String>("bucket_url");
+                    if bucket_url.is_none() {
+                        println!("error!")
                     }
-                    else{
-                        let def_primary_sp = "default".to_string(); 
-                        let primary_sp = primary_sp.unwrap_or(&def_primary_sp);
-                        println!("{primary_sp}")
-                    }
-                }
+
+                    // create client!!! Kraken
+
+                    let _primary_sp_addr:String = match sub_matches.get_one::<String>("primary_sp") {
+                        Some(addr) => addr.clone(),
+                        None => {
+                            "some_address_from_client".to_string()
+                        } 
+                    };
+
+                    let _payment_addr:String = match sub_matches.get_one::<String>("paymentAddress") {
+                        Some(addr) => addr.clone(),
+                        None => "".to_string(),
+                    };
+
+                    let _visibility:String = match sub_matches.get_one::<String>("visibility") {
+                        Some(x) => {x.clone()},
+                        None => "private".to_string(),
+                    };
+
+                    let _charge_quota:u64 = match sub_matches.get_one::<u64>("chargedQuota") {
+                        Some(&quota) if quota>0 => {
+                            quota.clone()
+                        },
+                        _ => 0,
+                    };
+
+                    // sdk get bucket options
+                    // set bucket options from flags
+                    // send request
+
+                    println!("Bucket was created... kidding :) work in progress.")
+                },
+                ("update", _) => {
+                    println!("something")
+                },
+                ("head", _) => {
+                    println!("something")
+                },
+                ("list", _) => {
+                    println!("something")
+                },
                 (&_, _) => {
                     println!("something")
-                }
+                },
             }
             
         }
@@ -56,6 +93,7 @@ fn main() {
                         println!("{amount}")
                     }
                     
+                    // do transfer
                 }
 
                 ("balance", sub_matches) => {
@@ -64,8 +102,8 @@ fn main() {
                         println!("flag address is none.");
                     }
                     else{
-                        let def_addr = "0x0000".to_string();
-                        let address = address.unwrap_or(&def_addr);
+                        // let def_addr = "0x0000".to_string();
+                        // let address = address.unwrap_or(&def_addr);
                     }
                 }
 

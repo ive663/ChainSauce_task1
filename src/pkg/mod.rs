@@ -1,6 +1,6 @@
 use clap::{command, arg, Command, value_parser};
 use std::fs;
-use serde::Deserialize;
+// use serde::Deserialize;
 use secp256k1::{SecretKey, PublicKey};
 
 //extern crate rustc_serialize;
@@ -8,10 +8,17 @@ use hex;
 
 #[derive(serde::Deserialize)]
 pub struct CliConfig{
-    rpcAddr: String,
-    chainId: String,
-    passwordFile: String,
+    _rpc_addr: String,
+    _chain_id: String,
+    password_file: String,
 }
+
+// #[derive(ValueEnum, Clone)]
+// pub enum VisbilityType {
+//     PublicRead,
+//     Private,
+//     Inherit,
+// }
 
 pub fn init() -> Command{
     command!()
@@ -22,9 +29,27 @@ pub fn init() -> Command{
             .subcommand(
                 Command::new("create")
                     .about("create a new bucket")
+                    .long_about("Create a new bucket and set a createBucketMsg to storage provider.
+                    The bucket name should unique and the default visibility is private.
+                    The command need to set the primary SP address with --primarySP.
+                    
+                    Examples:
+                    # Create a new bucket called gnfd-bucket, visibility is public-read
+                    $ gnfd-cmd bucket create --visibility=public-read  gnfd://gnfd-bucket")
                     .args([
-                        arg!(primarySPFlag: --primarySP <STORAGE_ADDR> "indicate the primarySP address, using the string type")
-                            .value_parser(value_parser!(String))
+                        arg!(bucket_url: <BUCKET_URL> "URL of the new bucket").required(true)
+                            .value_parser(value_parser!(String)),
+                        arg!(--primarySP [STORAGE_ADDR] "indicate the primarySP address, using the string type")
+                            .value_parser(value_parser!(String)).required(false).require_equals(true)
+                            .default_value(""),
+                        arg!(--paymentAddress [PAYMENT_ADDR] "indicate the PaymentAddress info, using the string type")
+                            .value_parser(value_parser!(String)).required(false).require_equals(true)
+                            .default_value(""),
+                        arg!(--chargedQuota [CHARGE_QUOTA] "indicate the read quota info of the bucket")
+                            .value_parser(value_parser!(u64)).required(false).require_equals(true),
+                        arg!(--visibility [VISIBILITY] "set visibility of the bucket")
+                            .value_parser(value_parser!(String)).required(false).require_equals(true)
+                            .default_value("private"),
                     ])
             )
     )
@@ -85,10 +110,10 @@ pub fn generate_key(key_file: String, config_file: String){
     let addr = hex::decode(&private_key).expect("can't decode private key to hex");
     //println!("{addr:?}");
 
-    let secp256k1_private = generate_secp256k1(&addr).unwrap();
+    let _secp256k1_private = generate_secp256k1(&addr).unwrap();
     //println!("{secp256k1_private}");
 
-    let password = fs::read_to_string("src/".to_owned() + &config.passwordFile).expect("can't read password from file");
+    let _password = fs::read_to_string("src/".to_owned() + &config.password_file).expect("can't read password from file");
     //println!("{password}");
 
 
