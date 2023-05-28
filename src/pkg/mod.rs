@@ -52,6 +52,13 @@ pub fn init() -> Command{
                             .default_value("private"),
                     ])
             )
+            .subcommand(
+                Command::new("ls")
+                    .about("list buckets")
+                    .long_about("List the bucket names and bucket ids of the user.
+                    Examples:
+                    $ gnfd-cmd bucket ls")
+            )
     )
     .subcommand(
         Command::new("bank")

@@ -11,8 +11,7 @@ description = "cmd tool for supporting making request to greenfield"
 [dependencies]
 clap = { version = "4.2.0", features = ["derive", "cargo"] }
 serde = {version = "1.0.144", features = ["derive"] }
-anyhow = "1.0"
-cosmos-sdk-proto = "0.19.0"
+cosmos-sdk-proto = "0.18.0"
 tonic = "0.9.2"
 toml = "0.7.4"
 hex = "0.4.3"
@@ -21,3 +20,14 @@ serde_json = "1.0.68"
 reqwest = {version = "0.11.11", features = ["json"]}
 tokio = { version = "1.28.1", features = ["full"] }
 futures = "0.3.28"
+cosmrs = { version = "0.13.0", features = ["bip32", "cosmwasm"]}
+env_logger = "0.10.0"
+anyhow = "1.0.70"
+prost = { version= "0.11.9" }
+rand_core = "0.6.4"
+tendermint-rpc = {version="0.31.1", features=["http-client"]}
+prost-types = "0.11.9"
+greenfield-sdk-proto = { git = "https://github.com/KRakenoZavr/greenfield-sdk-rust-v2", branch = "main" }
+
+[dev-dependencies]
+tokio = { version = "1", features = ["full"] }
