@@ -1,7 +1,7 @@
 // use std::fs;
 #[allow(dead_code)]
 use crate::client::RpcClient;
-use pkg::{generate_key};
+// use pkg::{generate_key}; 
 use ChainSauce_task1::init;
 
 pub mod client;
@@ -148,7 +148,7 @@ async fn main() {
             //     .expect("Should have been able to read the file");
             // println!("{content}");
 
-            generate_key(key_path, config_path);
+//             generate_key(key_path, config_path);
         }
 
         Some((&_, _)) => {
