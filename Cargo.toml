@@ -1,6 +1,6 @@
 [package]
 name = "ChainSauce_task1"
-# name = "gnfd-cmd"
+# name = "gnfd-cmd-rust"
 version = "0.1.0"
 edition = "2021"
 authors = ["Almas Serik", "Alibek Sarseitov", "Artyom Amayev", "Nursultan Ergaliev"]
