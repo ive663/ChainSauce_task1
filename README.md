@@ -38,7 +38,7 @@ All modules was uploaded as separate repository [Greenfield Rust SDK](https://gi
 ./ChainSauce_task1 -h
 
 #check balance:
-./ChainSauce_task1 bank balance  
+./ChainSauce_task1 bank balance --address 0x1060D988E6b1235d1Bd0A01E6378A934b6aC763e
 
 #list bucket info:
 ./ChainSauce_task1 bucket ls
